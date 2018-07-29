@@ -5,6 +5,11 @@
         "jquery": true,
         "es6": true
     },
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
     "rules": {
         "quotes": 0,
         "no-trailing-spaces": 0,
