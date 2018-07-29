@@ -30534,6 +30534,34 @@ arguments[4][22][0].apply(exports,arguments)
 },{"dup":22}],27:[function(require,module,exports){
 'use strict';
 
+var React = require('react');
+
+class About extends React.Component {
+    render() {
+        return (React.createElement("div", null, 
+            React.createElement("h1", null, "About"), 
+            React.createElement("p", null, 
+                "This app uses the following technologies", 
+                React.createElement("ul", null, 
+                    React.createElement("li", null, "React"), 
+                    React.createElement("li", null, "React Router"), 
+                    React.createElement("li", null, "Flux"), 
+                    React.createElement("li", null, "Node"), 
+                    React.createElement("li", null, "Gulp"), 
+                    React.createElement("li", null, "Browserify"), 
+                    React.createElement("li", null, "Bootstrap")
+                )
+            )
+        ))
+
+    }
+}
+
+module.exports = About;
+
+},{"react":25}],28:[function(require,module,exports){
+'use strict';
+
 let React = require('react');
 
 class Home extends React.Component{
@@ -30547,13 +30575,38 @@ class Home extends React.Component{
 
 module.exports = Home;
 
-},{"react":25}],28:[function(require,module,exports){
+},{"react":25}],29:[function(require,module,exports){
 $ = jQuery = require('jquery');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Home = require('./components/homePage');
+var About = require('./components/about/aboutPage');
 
-ReactDOM.render(React.createElement(Home, null), document.getElementById('app'));
+var App = (props) => {
+        let Child;
+        
+        switch (props.route) {
+            case 'about':
+                Child = About;
+                break;
+            default: Child = Home
+        }
 
-},{"./components/homePage":27,"jquery":15,"react":25,"react-dom":21}]},{},[28]);
+        return (React.createElement("div", null, 
+            React.createElement(Child, null)
+        ))
+
+};
+
+function render() {
+    var route = window.location.hash.substr(1);
+
+    ReactDOM.render(React.createElement(App, {route: route}), document.getElementById('app'));
+}
+
+window.addEventListener('hashChange', render);
+
+render();
+
+},{"./components/about/aboutPage":27,"./components/homePage":28,"jquery":15,"react":25,"react-dom":21}]},{},[29]);
