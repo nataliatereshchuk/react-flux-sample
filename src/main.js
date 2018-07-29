@@ -1,13 +1,18 @@
+
 $ = jQuery = require('jquery');
 
 var React = require('react');
 var ReactDOM = require('react-dom');
 var Home = require('./components/homePage');
 var About = require('./components/about/aboutPage');
+var Header = require('./components/common/header');
 
-var App = (props) => {
+(function(win) {
+    'use strict';
+
+    var App = (props) => {
         let Child;
-        
+
         switch (props.route) {
             case 'about':
                 Child = About;
@@ -16,17 +21,18 @@ var App = (props) => {
         }
 
         return (<div>
+            <Header/>
             <Child/>
         </div>)
+    };
 
-};
 
-function render() {
-    var route = window.location.hash.substr(1);
+    win.addEventListener('hashChange', render);
+    function render() {
+        var route = win.location.hash.substr(1);
 
-    ReactDOM.render(<App route={route}/>, document.getElementById('app'));
-}
+        ReactDOM.render(<App route={route}/>, document.getElementById('app'));
+    }
 
-window.addEventListener('hashChange', render);
-
-render();
+    render();
+})(window);
