@@ -1,8 +1,7 @@
 $ = jQuery = require('jquery');
 
 var React = require('react');
-var homePage = require('./components/homePage');
+var ReactDOM = require('react-dom');
+var Home = require('./components/homePage');
 
-var App = console.log('Hello world');
-
-module.exports = App;
+ReactDOM.render(<Home/>, document.getElementById('app'));
