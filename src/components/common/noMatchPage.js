@@ -1,5 +1,5 @@
-
 'use strict';
+
 var React = require('react');
 
 class NoMatchPage extends React.Component {

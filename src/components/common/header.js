@@ -1,5 +1,7 @@
-let React = require('react');
+'use strict';
 
+let React = require('react');
+let Link = require('react-router-dom').Link;
 
 class Header extends React.Component {
     render() {
@@ -10,14 +12,13 @@ class Header extends React.Component {
                         <img src='images/logo.png' width='36px' height='30px'/>
                     </a>
                     <ul className='nav navbar'>
-                        <li><a href='/'>Home</a></li>
-                        <li><a href='/authors'>Authors</a></li>
-                        <li><a href='/about'>About</a></li>
+                        <li><Link to={{pathname: '/'}}>Home</Link></li>
+                        <li><Link to={{pathname: '/authors'}}>Authors</Link></li>
+                        <li><Link to={{pathname: '/about'}}>About</Link></li>
                     </ul>
                 </div>
             </nav>
         )
-
     }
 }
 
