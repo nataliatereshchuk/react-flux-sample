@@ -11,6 +11,6 @@ class Home extends React.Component{
                 <Link to={{pathname: '/about'}} className='btn btn-primary btn-lg'>Learn more...</Link>
             </div>)
     }
-};
+}
 
 module.exports = Home;
