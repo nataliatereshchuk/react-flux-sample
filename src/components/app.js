@@ -2,8 +2,11 @@ $ = jQuery = require('jquery');
 
 var React = require('react');
 var Header = require('./common/header');
-var Main = require('./main');
+
 var BrowserRouter = require('react-router-dom').BrowserRouter;
+var Switch = require('react-router-dom').Switch;
+var Route = require('react-router-dom').Route;
+var Redirect = require('react-router-dom').Redirect;
 
 class App extends React.Component {
     render() {
@@ -11,7 +14,19 @@ class App extends React.Component {
             <BrowserRouter>
                 <div>
                     <Header/>
-                    <Main/>
+                    <main className='container-fluid'>
+                        <Switch>
+                            <Route exact path='/' component={require('./common/homePage')}/>
+                            <Route path='/about-us' render={() => {
+                                return <Redirect to='/about'/>
+                            }}/>
+
+                            <Route path='/authors' component={require('./authors/authorPage')}/>
+                            <Route path='/about' component={require('./about/aboutPage')}/>
+
+                            <Route component={require('./common/noMatchPage')}/>
+                        </Switch>
+                    </main>
                 </div>
             </BrowserRouter>
         )

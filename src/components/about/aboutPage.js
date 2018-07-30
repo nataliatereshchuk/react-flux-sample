@@ -6,7 +6,7 @@ class About extends React.Component {
     render() {
         return (<div>
             <h1>About</h1>
-            <p>
+            <div>
                 This app uses the following technologies
                 <ul>
                     <li>React</li>
@@ -17,7 +17,7 @@ class About extends React.Component {
                     <li>Browserify</li>
                     <li>Bootstrap</li>
                 </ul>
-            </p>
+            </div>
         </div>)
 
     }

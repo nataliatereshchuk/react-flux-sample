@@ -1,6 +1,7 @@
 'use strict';
 
 let React = require('react');
+let NavLink = require('react-router-dom').NavLink;
 let Link = require('react-router-dom').Link;
 
 class Header extends React.Component {
@@ -8,13 +9,13 @@ class Header extends React.Component {
         return (
             <nav className='navbar navbar-default'>
                 <div className='container-fluid'>
-                    <a href='/' className='navbar-brand'>
+                    <Link to={{pathname: '/'}}>
                         <img src='images/logo.png' width='36px' height='30px'/>
-                    </a>
+                    </Link>
                     <ul className='nav navbar'>
-                        <li><Link to={{pathname: '/'}}>Home</Link></li>
-                        <li><Link to={{pathname: '/authors'}}>Authors</Link></li>
-                        <li><Link to={{pathname: '/about'}}>About</Link></li>
+                        <li><NavLink activeClassName='active' to={{pathname: '/'}}>Home</NavLink></li>
+                        <li><NavLink activeClassName='active' to={{pathname: '/authors'}}>Authors</NavLink></li>
+                        <li><NavLink activeClassName='active' to={{pathname: '/about'}}>About</NavLink></li>
                     </ul>
                 </div>
             </nav>

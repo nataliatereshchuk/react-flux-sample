@@ -25,6 +25,6 @@ class AuthorPage extends React.Component {
             <AuthorList authors={this.state.authors}/>
         </div>)
     }
-};
+}
 
 module.exports = AuthorPage;
