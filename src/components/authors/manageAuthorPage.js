@@ -14,7 +14,6 @@ class ManageAuthorPage extends React.Component {
             author = AuthorAPI.getAuthorById(this.props.match.params.id);
         }
 
-        debugger;
         this.state = {
             author: author || { id: '', firstName: '', lastName: ''},
             errors: {}
