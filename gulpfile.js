@@ -12,7 +12,7 @@ var babelify = require('babelify');
 
 var config = {
     port: 4000,
-    devBaseUrl: 'http://localhost',
+    host: 'localhost',
     paths: {
         html: './src/*.html',
         js: './src/**/*.js',
@@ -31,14 +31,15 @@ gulp.task('connect', function () {
     connect.server({
         root: ['dist'],
         port: config.port,
-        base: config.devBaseUrl,
-        livereload: true
+        base: `http://${config.host}/`,
+        livereload: true,
+        fallback: 'dist/index.html'
     });
 });
 
 gulp.task('open', ['connect'], function() {
     gulp.src('dist/index.html')
-        .pipe(open({ uri: config.devBaseUrl + ':' + config.port + '/' }))
+        .pipe(open({ uri: `http://${config.host}:${config.port}`}))
 });
 
 gulp.task('js', function () {
