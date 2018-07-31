@@ -25,7 +25,7 @@ class AuthorPage extends React.Component {
         return (<div>
             <h1>Authors</h1>
             <Link to={{pathname: '/author'}} className='btn btn-default'>Create Author</Link>
-            <AuthorList authors={this.state.authors}/>
+            <AuthorList authors={this.state.authors} errors={this.state.errors}/>
         </div>)
     }
 }

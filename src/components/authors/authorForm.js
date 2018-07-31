@@ -14,13 +14,14 @@ class AuthorForm extends React.Component{
                 <TextInput name='firstName'
                            id='firstName_input'
                            placeholder='Enter First Name...'
-                           onChange={this.props.onAuthorUpdate}/>
+                           onChange={this.props.onAuthorUpdate}
+                           error={this.props.errors.firstName}/>
                 <TextInput name='lastName'
                            id='lastName_input'
                            placeholder='Enter Last Name...'
-                           onChange={this.props.onAuthorUpdate}/>
+                           onChange={this.props.onAuthorUpdate}
+                           error={this.props.errors.lastName}/>
                 <input type='submit' className='btn btn-primary' value='Submit' onClick={this.props.onSave}/>
-                <div className='input'>{this.props.error}</div>
             </form>
         )
     }

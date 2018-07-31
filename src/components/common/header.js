@@ -7,7 +7,7 @@ let Link = require('react-router-dom').Link;
 class Header extends React.Component {
     render() {
         return (
-            <nav className='navbar navbar-default'>
+            <nav className='navbar'>
                 <div className='container-fluid'>
                     <Link to={{pathname: '/'}}>
                         <img src='images/logo.png' width='36px' height='30px'/>
