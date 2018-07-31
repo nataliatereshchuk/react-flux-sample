@@ -26,10 +26,10 @@ class AuthorList extends React.Component {
                 </tbody>
             </table>)
     }
-
-    // AuthorList.propTypes = {
-    //     authors: PropTypes.string
-    // }
 }
+
+AuthorList.propTypes = {
+    authors: PropTypes.string
+};
 
 module.exports = AuthorList;

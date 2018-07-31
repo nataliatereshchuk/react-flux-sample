@@ -1,4 +1,4 @@
-$ = jQuery = require('jquery');
+// $ = jQuery = require('jquery');
 
 var React = require('react');
 var Header = require('./common/header');
@@ -16,14 +16,13 @@ class App extends React.Component {
                     <Header/>
                     <main className='container-fluid'>
                         <Switch>
-                            <Route exact path='/' component={require('./common/homePage')}/>
+                            <Route exact path='/' component={require('./home/homePage')}/>
                             <Route path='/about-us' render={() => {
                                 return <Redirect to='/about'/>
                             }}/>
                             <Route path='/authors' component={require('./authors/authorPage')}/>
                             <Route path='/author' component={require('./authors/manageAuthorPage')}/>
                             <Route path='/about' component={require('./about/aboutPage')}/>
-
                             <Route component={require('./common/noMatchPage')}/>
                         </Switch>
                     </main>

@@ -1,6 +1,7 @@
 'use strict';
 
 let React = require('react');
+let TextInput = require('../common/textInput');
 
 class AuthorForm extends React.Component{
     constructor(props) {
@@ -10,27 +11,16 @@ class AuthorForm extends React.Component{
     render() {
         return (
             <form>
-                <div className='form-group'>
-                    <label for='firstName_input'>First Name</label>
-                    <input type='text'
-                           name='firstName'
+                <TextInput name={{name: 'ccc'}}
                            id='firstName_input'
-                           className='form-control'
                            placeholder='Enter First Name...'
-                           value={this.props.author.firstName}
-                           onChange={this.props.onAuthorUpdate}/>
-                </div>
-                <div className='form-group'>
-                    <label htmlFor='firstName_input'>Last Name</label>
-                    <input type='text'
+                           onChange={this.props.onAuthorUpdate}></TextInput>
+                <TextInput name='lastName'
                            id='lastName_input'
-                           name='lastName'
-                           className='form-control'
                            placeholder='Enter Last Name...'
-                           value={this.props.author.lastName}
-                           onChange={this.props.onAuthorUpdate}/>
-                </div>
+                           onChange={this.props.onAuthorUpdate}></TextInput>
                 <input type='submit' className='btn btn-primary' value='Submit'/>
+                <div className='input'>{this.props.error}</div>
             </form>
         )
     }
