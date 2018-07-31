@@ -11,15 +11,15 @@ class AuthorForm extends React.Component{
     render() {
         return (
             <form>
-                <TextInput name={{name: 'ccc'}}
+                <TextInput name='firstName'
                            id='firstName_input'
                            placeholder='Enter First Name...'
-                           onChange={this.props.onAuthorUpdate}></TextInput>
+                           onChange={this.props.onAuthorUpdate}/>
                 <TextInput name='lastName'
                            id='lastName_input'
                            placeholder='Enter Last Name...'
-                           onChange={this.props.onAuthorUpdate}></TextInput>
-                <input type='submit' className='btn btn-primary' value='Submit'/>
+                           onChange={this.props.onAuthorUpdate}/>
+                <input type='submit' className='btn btn-primary' value='Submit' onClick={this.props.onSave}/>
                 <div className='input'>{this.props.error}</div>
             </form>
         )

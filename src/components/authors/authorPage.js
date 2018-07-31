@@ -1,10 +1,10 @@
 'use strict';
 
-var React = require('react');
-var Link = require('react-router-dom').Link;
+let React = require('react');
+let Link = require('react-router-dom').Link;
 
-var AuthorList = require('./authorList');
-var AuthorAPI = require('../../api/authorApi');
+let AuthorList = require('./authorList');
+let AuthorAPI = require('../../api/authorApi');
 
 class AuthorPage extends React.Component {
     constructor(props) {

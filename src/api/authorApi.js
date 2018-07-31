@@ -1,17 +1,17 @@
 'use strict';
 
-var authors = require('./authorData').authors;
-var _ = require('lodash');
+let authors = require('./authorData').authors;
+let _ = require('lodash');
 
-var _generateId = function(author) {
+let _generateId = function(author) {
 	return author.firstName.toLowerCase() + '-' + author.lastName.toLowerCase();
 };
 
-var _clone = function(item) {
+let _clone = function(item) {
 	return JSON.parse(JSON.stringify(item));
 };
 
-var AuthorApi = {
+let AuthorApi = {
 	getAllAuthors: function() {
 		return _clone(authors); 
 	},

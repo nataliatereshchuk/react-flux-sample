@@ -1,12 +1,12 @@
 // $ = jQuery = require('jquery');
 
-var React = require('react');
-var Header = require('./common/header');
+let React = require('react');
+let Header = require('./common/header');
 
-var BrowserRouter = require('react-router-dom').BrowserRouter;
-var Switch = require('react-router-dom').Switch;
-var Route = require('react-router-dom').Route;
-var Redirect = require('react-router-dom').Redirect;
+let BrowserRouter = require('react-router-dom').BrowserRouter;
+let Switch = require('react-router-dom').Switch;
+let Route = require('react-router-dom').Route;
+let Redirect = require('react-router-dom').Redirect;
 
 class App extends React.Component {
     render() {
