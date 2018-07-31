@@ -23,6 +23,7 @@ class TextInput extends React.Component {
                        id={this.props.id}
                        className='form-control'
                        placeholder={this.props.placeholder}
+                       value={this.props.value}
                        onChange={this.props.onChange}/>
                 <div className='input'>{this.props.error}</div>
             </div>

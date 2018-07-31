@@ -1,6 +1,7 @@
 'use strict';
 
 let React = require('react');
+let Link = require('react-router-dom').Link;
 
 class AuthorList extends React.Component {
     constructor(props) {
@@ -18,7 +19,7 @@ class AuthorList extends React.Component {
                 </tr>
                 {this.props.authors.map((item, i) =>
                     <tr key={i}>
-                        <td>{item.id}</td>
+                        <td><Link to={{ pathname: `/author/${item.id}`}}>{item.id}</Link></td>
                         <td>{item.firstName}</td>
                         <td>{item.lastName}</td>
                     </tr>)}

@@ -11,7 +11,8 @@ class AuthorPage extends React.Component {
         super(props);
 
         this.state = {
-            authors: []
+            authors: [],
+            errors: {}
         }
     }
 
@@ -24,7 +25,7 @@ class AuthorPage extends React.Component {
     render() {
         return (<div>
             <h1>Authors</h1>
-            <Link to={{pathname: '/author'}} className='btn btn-default'>Create Author</Link>
+            <Link to='/author' className='btn btn-default'>Create Author</Link>
             <AuthorList authors={this.state.authors} errors={this.state.errors}/>
         </div>)
     }

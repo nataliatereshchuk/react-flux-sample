@@ -15,12 +15,14 @@ class AuthorForm extends React.Component{
                            id='firstName_input'
                            placeholder='Enter First Name...'
                            onChange={this.props.onAuthorUpdate}
-                           error={this.props.errors.firstName}/>
+                           error={this.props.errors.firstName}
+                           value={this.props.author.firstName}/>
                 <TextInput name='lastName'
                            id='lastName_input'
                            placeholder='Enter Last Name...'
                            onChange={this.props.onAuthorUpdate}
-                           error={this.props.errors.lastName}/>
+                           error={this.props.errors.lastName}
+                           value={this.props.author.lastName}/>
                 <input type='submit' className='btn btn-primary' value='Submit' onClick={this.props.onSave}/>
             </form>
         )

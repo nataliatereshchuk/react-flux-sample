@@ -8,8 +8,15 @@ let toastr = require('toastr');
 class ManageAuthorPage extends React.Component {
     constructor(props) {
         super(props);
+
+        let author;
+        if(this.props.match.params.id){
+            author = AuthorAPI.getAuthorById(this.props.match.params.id);
+        }
+
+        debugger;
         this.state = {
-            author: { id: '', firstName: '', lastName: ''},
+            author: author || { id: '', firstName: '', lastName: ''},
             errors: {}
         };
 

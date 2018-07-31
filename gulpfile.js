@@ -34,7 +34,8 @@ gulp.task('connect', function () {
         port: config.port,
         base: `http://${config.host}/`,
         livereload: true,
-        fallback: 'dist/index.html'
+        fallback: 'dist/index.html',
+        debug: true
     });
 });
 

@@ -21,6 +21,7 @@ class App extends React.Component {
                                 return <Redirect to='/about'/>
                             }}/>
                             <Route path='/authors' component={require('./authors/authorPage')}/>
+                            <Route path='/author/:id' component={require('./authors/manageAuthorPage')}/>
                             <Route path='/author' component={require('./authors/manageAuthorPage')}/>
                             <Route path='/about' component={require('./about/aboutPage')}/>
                             <Route component={require('./common/noMatchPage')}/>
