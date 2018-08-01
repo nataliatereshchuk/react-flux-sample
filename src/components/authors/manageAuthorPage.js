@@ -2,16 +2,17 @@
 
 let React = require('react');
 let AuthorForm = require('./authorForm');
-let AuthorAPI = require('../../api/authorApi');
 let toastr = require('toastr');
+let AuthorStore = require('../../stores/authorStore');
+let AuthorActions = require('../../actions/author.actions');
 
 class ManageAuthorPage extends React.Component {
     constructor(props) {
         super(props);
 
         let author;
-        if(this.props.match.params.id){
-            author = AuthorAPI.getAuthorById(this.props.match.params.id);
+        if(this.props.match.params.id) {
+            author = AuthorStore.getAuthorById(this.props.match.params.id);
         }
 
         this.state = {
@@ -55,7 +56,12 @@ class ManageAuthorPage extends React.Component {
             return;
         }
 
-        AuthorAPI.saveAuthor(this.state.author);
+        if(this.state.author.id) {
+            AuthorActions.updateAuthor(this.state.author);
+        } else {
+            AuthorActions.createAuthor(this.state.author);
+        }
+
         toastr.success('Author saved');
         this.props.history.push('/authors');
     }

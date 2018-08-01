@@ -16,12 +16,14 @@ class AuthorList extends React.Component {
                     <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
+                    <th>Delete Author</th>
                 </tr>
                 {this.props.authors.map((item, i) =>
                     <tr key={i}>
                         <td><Link to={{ pathname: `/author/${item.id}`}}>{item.id}</Link></td>
                         <td>{item.firstName}</td>
                         <td>{item.lastName}</td>
+                        <td><div><img src='images/delete-icon.png'/></div></td>
                     </tr>)}
                 </tbody>
             </table>)

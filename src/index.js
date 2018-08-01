@@ -1,7 +1,10 @@
 'use-strict';
 
-var React = require('react');
-var ReactDOM = require('react-dom');
-var App = require('./components/app');
+let React = require('react');
+let ReactDOM = require('react-dom');
+let App = require('./components/app');
+let InitializeActions = require('./actions/initialize.actions');
+
 
 ReactDOM.render(<App/>, document.getElementById('app'));
+InitializeActions.initApp();

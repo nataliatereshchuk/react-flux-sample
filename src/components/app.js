@@ -1,5 +1,3 @@
-// $ = jQuery = require('jquery');
-
 let React = require('react');
 let Header = require('./common/header');
 
