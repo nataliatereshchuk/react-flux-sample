@@ -2,6 +2,7 @@
 
 let Dispatcher = require('../dispatcher/appDispatcher');
 let ActionTypes = require('../constants/actionTypes');
+let _ = require('lodash');
 let EventEmmiter = require('events');
 const CHANGE_EVENT = 'change';
 
@@ -43,6 +44,10 @@ Dispatcher.register((action) => {
                     lastName: action.author.lastName
                 });
                 AuthorStore.emitChange();
+            break;
+        case ActionTypes.DELETE_AUTHOR:
+            _.remove(_authors, { id: action.authorId});
+            AuthorStore.emitChange();
             break;
         case ActionTypes.INITIALIZE:
             _authors = action.initialData.authors;

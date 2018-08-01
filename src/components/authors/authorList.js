@@ -2,10 +2,18 @@
 
 let React = require('react');
 let Link = require('react-router-dom').Link;
+let AuthorActions = require('../../actions/author.actions');
+let toastr = require('toastr');
 
 class AuthorList extends React.Component {
     constructor(props) {
         super(props);
+    }
+
+    deleteAuthor(id, event) {
+        event.preventDefault();
+        AuthorActions.deleteAuthor(id);
+        toastr.success('Author was deleted.')
     }
 
     render() {
@@ -23,7 +31,7 @@ class AuthorList extends React.Component {
                         <td><Link to={{ pathname: `/author/${item.id}`}}>{item.id}</Link></td>
                         <td>{item.firstName}</td>
                         <td>{item.lastName}</td>
-                        <td><div><img src='images/delete-icon.png'/></div></td>
+                        <td><a onClick={this.deleteAuthor.bind(this, item.id)}><img src='images/delete-icon.png'/></a></td>
                     </tr>)}
                 </tbody>
             </table>)

@@ -18,6 +18,13 @@ let AuthorActions = {
             actionType: ActionTypes.UPDATE_AUTHOR,
             author: updateAuthor
         });
+    },
+    deleteAuthor: id => {
+        AuthorAPI.deleteAuthor(id);
+        Dispatcher.dispatch({
+            actionType: ActionTypes.DELETE_AUTHOR,
+            authorId: id
+        });
     }
 };
 
